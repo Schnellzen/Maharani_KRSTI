@@ -73,6 +73,7 @@ while (check==1){
   check = SD.exists(txt);
   frame++;
 
+  uint64_t millisprev=millis();
   if (check == 1){
     Files = SD.open(txt);
     Serial.println(txt);
@@ -87,8 +88,9 @@ while (check==1){
       }  
     Files.close();
   }
-  delay(1000/fps);
-  DEBUG_SERIAL.println(millis());
+  uint64_t millisaft=millis();
+  delay(1000/fps-millisaft+millisprev-2); //fps is corrected by the time need to move all dynamixel
+//  DEBUG_SERIAL.println(millis());
 
 }
 
