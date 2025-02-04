@@ -32,7 +32,7 @@ void setup() {
   // Use UART port of DYNAMIXEL Shield to debug.
   DEBUG_SERIAL.begin(115200);
   Wire.begin(); //sometimes doesn't need to be stated, but just in case when using mpu through I2C connection (dunno why tho)
-  while(!DEBUG_SERIAL);
+//  while(!DEBUG_SERIAL);
 
   // Set Port baudrate to 1000000bps. This has to match with DYNAMIXEL baudrate.
   dxl.begin(1000000);

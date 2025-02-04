@@ -77,57 +77,57 @@ void setup() {
     DEBUG_SERIAL.println(txt);
   }
 
-
-  fi = 0;  
-  for(fi = 0; fi < DXL_KAKI_TALLY; fi++){
-    DXL_ID = DXL_KAKI[fi];
-
-    Serial.println(DXL_ID);
-
-    Files = SD.open(txt, FILE_WRITE);
-    if (Files) {
-      Serial.print("Writing to ");
-      Serial.println(txt);
-      Files.println(dxl.getPresentPosition(DXL_ID,UNIT_DEGREE));
-      // close the file:
-      Files.close();
-      Serial.println("done.");
-    }
-    else { // if the file didn't open, print an error:
-    Serial.print("error opening");
-    Serial.println(txt);
-    }
-
-    //checking, by printing whatever is writed on the file
-    Files = SD.open(txt);
-    if (Files) {
-      Serial.println(txt);
-
-      // read from the file until there's nothing else in it:
-      while (Files.available()) {
-        Serial.write(Files.read());
-      }
-      // close the file:
-      Files.close();
-    } 
-    else {
-      Serial.print("error opening");
-      Serial.println(txt);
-      }
-
-
-   }
   
-// Serial.println("hehe");
-// int i = 0;
-// for(i = 0; i < 10; i++) {
-// String txt = ".txt";
-//  txt = i + txt;
-// DEBUG_SERIAL.println (txt);
-// File Files = SD.open(txt, FILE_WRITE);
-// Files.println(i);
-// Files.close();
-// }
+
+
+  // fi = 0;  
+  // for(fi = 0; fi < DXL_KAKI_TALLY; fi++){
+  //   DXL_ID = DXL_KAKI[fi];
+
+  //   Serial.println(DXL_ID);
+
+  //   Files = SD.open(txt, FILE_WRITE);
+  //   if (Files) {
+  //     Serial.print("Writing to ");
+  //     Serial.println(txt);
+  //     Files.println(dxl.getPresentPosition(DXL_ID,UNIT_DEGREE));
+  //     // close the file:
+  //     Files.close();
+  //     Serial.println("done.");
+  //   }
+  //   else { // if the file didn't open, print an error:
+  //   Serial.print("error opening");
+  //   Serial.println(txt);
+  //   }
+
+  //   //checking, by printing whatever is writed on the file
+  //   Files = SD.open(txt);
+  //   if (Files) {
+  //     Serial.println(txt);
+
+  //     // read from the file until there's nothing else in it:
+  //     while (Files.available()) {
+  //       Serial.write(Files.read());
+  //     }
+  //     // close the file:
+  //     Files.close();
+  //   } 
+  //   else {
+  //     Serial.print("error opening");
+  //     Serial.println(txt);
+  //     }
+
+
+  //  }
+  
+Serial.println("hehe");
+int i = 0;
+for(i = 0; i < maxFrame+2 ; i++) {
+String txt = ".txt";
+ txt = i + txt;
+DEBUG_SERIAL.println (txt);
+SD.remove(txt);
+}
 
 
 ////////////

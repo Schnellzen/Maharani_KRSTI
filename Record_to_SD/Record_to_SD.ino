@@ -49,7 +49,7 @@ void setup() {
     // Turn off torque when configuring items in EEPROM area
     dxl.torqueOff(DXL_ID);
     dxl.setOperatingMode(DXL_ID, OP_POSITION); 
-    dxl.torqueOn(DXL_ID);
+  //  dxl.torqueOn(DXL_ID);
 
     // Limit the maximum velocity in Position Control Mode. Use 0 for Max speed
     dxl.writeControlTableItem(PROFILE_VELOCITY, DXL_ID, 0);
